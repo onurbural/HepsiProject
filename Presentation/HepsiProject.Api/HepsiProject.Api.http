@@ -1,0 +1,6 @@
+@HepsiProject.Api_HostAddress = http://localhost:5225
+
+GET {{HepsiProject.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
