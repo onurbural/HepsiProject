@@ -7,6 +7,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var env = builder.Environment;
+//burasý yukarýdan seçilen projeye göre environmenti ayarlar.
+builder.Configuration.SetBasePath(env.ContentRootPath)
+    .AddJsonFile("appsettings.json",optional:false)
+//her þekilde appsettingsi bul ve ona göre konfigure et.
+    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+//burada production veya environment olarak ayýklanmamýþ olabilir. isteðe baðlý kontrol et.
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

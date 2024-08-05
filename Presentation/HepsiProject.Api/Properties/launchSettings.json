@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "http": {
+    "HepsiProject.Development": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -19,12 +19,23 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+    "HepsiProject.Production": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+          //burası eğer production olarak güncellenseydi sistem gidip oappsettings dosyasına bakacak idi. Development olduğu için  Development dosyasına bakıyor. 
       }
     }
   }
