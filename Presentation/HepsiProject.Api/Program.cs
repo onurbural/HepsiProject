@@ -1,3 +1,5 @@
+using HepsiProject.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,7 +15,10 @@ builder.Configuration.SetBasePath(env.ContentRootPath)
     .AddJsonFile("appsettings.json",optional:false)
 //her þekilde appsettingsi bul ve ona göre konfigure et.
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-//burada production veya environment olarak ayýklanmamýþ olabilir. isteðe baðlý kontrol et.
+//bu kod burada production veya environment olarak ayýklanmamýþ olabilir. isteðe baðlý kontrol et. demek.
+
+builder.Services.AddPersistence(builder.Configuration);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
